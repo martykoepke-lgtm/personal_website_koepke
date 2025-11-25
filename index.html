@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marty Koepke | Real Problems. Thoughtful Solutions.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FFFBF7;
+            --color-bg-alt: #FFF8F0;
+            --color-text: #2D2A26;
+            --color-text-muted: #6B6560;
+            --color-accent: #E07A3D;
+            --color-accent-light: #F4A574;
+            --color-accent-dark: #C45A1C;
+            --color-warm: #D4A373;
+            --color-deep: #1A1714;
+            --font-display: 'Fraunces', serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255, 251, 247, 0.9);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse at center, rgba(224, 122, 61, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-greeting {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--color-accent);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .hero h1 .highlight {
+            color: var(--color-accent);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: var(--color-text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(224, 122, 61, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-text);
+            border: 2px solid var(--color-text);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-text);
+            color: var(--color-bg);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--color-bg-alt);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-image {
+            position: sticky;
+            top: 120px;
+        }
+
+        .about-photo {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+        }
+
+        .about-content p {
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p strong {
+            color: var(--color-text);
+        }
+
+        .about-personal {
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .about-personal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .about-personal-image {
+            width: 100%;
+            height: 200px;
+            background: var(--color-bg);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-muted);
+            font-style: italic;
+            font-size: 0.9rem;
+            border: 2px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        .about-personal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .belief-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .belief-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+        }
+
+        .belief-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        /* My Story Section */
+        .my-story {
+            background: var(--color-bg);
+        }
+
+        .story-content {
+            max-width: 800px;
+        }
+
+        .story-content p {
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .story-content p strong {
+            color: var(--color-text);
+        }
+
+        .story-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .story-image-placeholder {
+            aspect-ratio: 4/3;
+            background: var(--color-bg-alt);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-muted);
+            font-style: italic;
+            font-size: 0.9rem;
+            border: 2px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        .story-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .story-highlight {
+            background: var(--color-bg-alt);
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .story-highlight p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+        }
+
+        /* How I Work Section */
+        .process {
+            background: var(--color-deep);
+            color: white;
+        }
+
+        .process .section-title {
+            color: white;
+        }
+
+        .process-intro {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin-bottom: 4rem;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .process-card {
+            padding: 2rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .process-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+        }
+
+        .process-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .process-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .process-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        /* What I Bring Section */
+        .capabilities {
+            background: var(--color-bg);
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .capability-card {
+            padding: 2.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .capability-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .capability-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .capability-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .capability-card p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Impact Section */
+        .impact {
+            background: var(--color-bg-alt);
+        }
+
+        .impact-intro {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        .portfolio-showcase {
+            max-width: 100%;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.08);
+            margin-bottom: 4rem;
+        }
+
+        .portfolio-item.featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        
+        .portfolio-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background: transparent;
+        }
+
+        .portfolio-placeholder {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #f5f5f5;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sophia-visual {
+            order: 2;
+        }
+
+        .sophia-placeholder {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #f5f5f5;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sophia-placeholder svg,
+        .placeholder-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .placeholder-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .sophia-placeholder svg {
+            color: white;
+        }
+
+        .sophia-placeholder p {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        .placeholder-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .portfolio-placeholder p {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        .portfolio-screenshot {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .portfolio-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-problem,
+        .portfolio-solution {
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+        }
+
+        .portfolio-problem strong,
+        .portfolio-solution strong {
+            display: block;
+            color: var(--color-text);
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .portfolio-problem {
+            color: var(--color-text-muted);
+        }
+
+        .portfolio-solution {
+            color: var(--color-text-muted);
+        }
+
+        .portfolio-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .tech-tag {
+            background: var(--color-bg-alt);
+            color: var(--color-text);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .portfolio-more {
+            text-align: center;
+            padding: 2rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        /* Speaking Section */
+        .speaking {
+            background: var(--color-bg);
+        }
+
+        .speaking-card {
+            background: linear-gradient(135deg, var(--color-deep) 0%, #2D2520 100%);
+            color: white;
+            border-radius: 24px;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaking-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 150%;
+            background: radial-gradient(ellipse at center, rgba(224, 122, 61, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .speaking-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .speaking-content h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .speaking-content p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .speaking-details {
+            position: relative;
+            z-index: 1;
+        }
+
+        .speaking-event {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .event-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .event-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-org {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--color-bg);
+            text-align: center;
+        }
+
+        .contact .section-title {
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            max-width: 500px;
+            margin: 0 auto 3rem;
+        }
+
+        .contact-email {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-email:hover {
+            color: var(--color-accent-dark);
+            transform: scale(1.02);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--color-deep);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.25rem;
+        }
+
+        .social-link:hover {
+            background: var(--color-accent);
+            transform: translateY(-3px);
+        }
+
+        /* For the Curious Section */
+        .curious-section {
+            background: var(--color-bg-alt);
+            padding-top: 0;
+            padding-bottom: 4rem;
+        }
+
+        .curious-section .section-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        .curious-section .curious-wrapper {
+            grid-column: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .curious-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: white;
+            border: 2px solid var(--color-text);
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--color-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .curious-toggle:hover {
+            background: var(--color-text);
+            color: white;
+        }
+
+        .curious-toggle svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .curious-toggle.active svg {
+            transform: rotate(180deg);
+        }
+
+        .curious-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .curious-content.active {
+            max-height: 2000px;
+            padding-top: 3rem;
+        }
+
+        .curious-section-group {
+            margin-bottom: 3rem;
+        }
+
+        .curious-section-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .curious-section-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .competency-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .competency-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .competency-category h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .competency-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .competency-category li {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .competency-category li:last-child {
+            border-bottom: none;
+        }
+
+        .curious-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .curious-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .curious-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .curious-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .curious-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+
+        .curious-card .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .curious-card .cert-tag {
+            background: var(--color-bg-alt);
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .toolkit-column {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .toolkit-column h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .toolkit-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .toolkit-tag {
+            background: var(--color-bg-alt);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-deep);
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio-item.featured {
+                grid-template-columns: 1fr;
+            }
+
+            .speaking-card {
+                grid-template-columns: 1fr;
+            }
+
+            .curious-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .competency-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .toolkit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .curious-section .section-container {
+                grid-template-columns: 1fr;
+            }
+
+            .curious-section .curious-wrapper {
+                grid-column: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+                position: static;
+            }
+
+            .story-images {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-content {
+                padding: 2rem 1.5rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">Marty Koepke</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#process">How I Work</a></li>
+            <li><a href="#capabilities">What I Bring</a></li>
+            <li><a href="#impact">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-greeting">Hi, I'm Marty</p>
+            <h1>I help organizations move from <span class="highlight">stuck</span> to <span class="highlight">solved.</span></h1>
+            <p class="hero-subtitle">Real problems deserve thoughtful solutions that actually work. I meet people where they are and architect paths to meaningful, lasting change.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                <a href="#process" class="btn btn-secondary">See How I Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="Screenshot 2025-11-24 200843.png" alt="Marty Koepke" class="about-photo">
+                </div>
+                <div class="about-content">
+                    <p class="section-label">About Me</p>
+                    <h2 class="section-title">Change doesn't have to be complicated.</h2>
+                    <p>I've spent more than 15 years solving complex problems across healthcare, technology, and organizational transformation—including enterprise systems with 2,200+ care sites and 25,000+ providers. But here's what I've learned: <strong>the best solutions are the ones people actually use.</strong></p>
+                    <p>I'm just as comfortable sitting with a front-desk receptionist as I am with a C-suite executive. Because real understanding requires listening at every level—from strategic vision to the daily reality of the people doing the work.</p>
+                    <p>I haven't found a technology that intimidates me yet. From process optimization to AI-enabled software development, I dig in, learn fast, and build solutions that stick.</p>
+                    <ul class="belief-list">
+                        <li>Every solution impacts real humans—design for them</li>
+                        <li>Success should be tangible and easy to understand</li>
+                        <li>The right path forward is clearer than it seems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For the Curious Section -->
+    <section class="curious-section">
+        <div class="section-container">
+            <div class="curious-wrapper">
+                <button class="curious-toggle" onclick="toggleCurious()">
+                    For the Curious
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="curious-content" id="curious-content">
+                <!-- Core Competencies -->
+                <div class="curious-section-group">
+                    <h3 class="curious-section-title">Core Competencies</h3>
+                    <div class="competency-grid">
+                        <div class="competency-category">
+                            <h4>Product & Platform Leadership</h4>
+                            <ul>
+                                <li>Product Strategy & Roadmap Development</li>
+                                <li>Platform Integration & Implementation</li>
+                                <li>Cross-Functional Team Leadership</li>
+                                <li>Stakeholder Management & Alignment</li>
+                                <li>OKR Definition & Performance Measurement</li>
+                                <li>Vendor Partnership</li>
+                            </ul>
+                        </div>
+                        <div class="competency-category">
+                            <h4>Healthcare Technology Integration</h4>
+                            <ul>
+                                <li>EHR Platform Integration (Epic, Cerner, Allscripts)</li>
+                                <li>Data Integration Strategy</li>
+                                <li>FHIR/HL7 Requirements Definition</li>
+                                <li>Multi-System Integration Coordination</li>
+                                <li>API-Based Integration Design</li>
+                                <li>Healthcare Data Standards</li>
+                            </ul>
+                        </div>
+                        <div class="competency-category">
+                            <h4>AI & Operational Excellence</h4>
+                            <ul>
+                                <li>AI Solution Implementation</li>
+                                <li>AI-Enabled Product Design</li>
+                                <li>Workflow Automation & RPA Integration</li>
+                                <li>Performance Excellence & Lean Six Sigma</li>
+                                <li>Continuous Improvement Operations</li>
+                                <li>Business Case Development & Value Quantification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications & Education -->
+                <div class="curious-section-group">
+                    <h3 class="curious-section-title">Certifications & Education</h3>
+                    <div class="curious-grid">
+                        <div class="curious-card">
+                            <h4>Professional Certifications</h4>
+                            <div class="certifications">
+                                <span class="cert-tag">Lean Six Sigma Green Belt</span>
+                                <span class="cert-tag">Certified SAFe 6.0 Agilist</span>
+                                <span class="cert-tag">Scrum Master</span>
+                                <span class="cert-tag">Epic Clinical Informaticist</span>
+                            </div>
+                        </div>
+                        <div class="curious-card">
+                            <h4>Education</h4>
+                            <p><strong>Master's in Healthcare Administration</strong><br>Ashford University</p>
+                            <p style="margin-top: 1rem;"><strong>B.S. Christian Education</strong><br>Southwestern College</p>
+                        </div>
+                        <div class="curious-card">
+                            <h4>Governance & Alignment</h4>
+                            <p>Skilled at facilitating executive governance forums, translating organizational priorities into actionable roadmaps, and building alignment from C-suite through front-line implementation teams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Toolkit -->
+                <div class="curious-section-group">
+                    <h3 class="curious-section-title">Current Toolkit</h3>
+                    <div class="toolkit-grid">
+                        <div class="toolkit-column">
+                            <h4>Healthcare Platforms</h4>
+                            <div class="toolkit-tags">
+                                <span class="toolkit-tag">Epic</span>
+                                <span class="toolkit-tag">Cerner</span>
+                                <span class="toolkit-tag">Altera</span>
+                                <span class="toolkit-tag">Abridge</span>
+                                <span class="toolkit-tag">Notable</span>
+                                <span class="toolkit-tag">Zoom (Clinical)</span>
+                                <span class="toolkit-tag">HIE Platforms</span>
+                                <span class="toolkit-tag">Remote Patient Monitoring</span>
+                            </div>
+                        </div>
+                        <div class="toolkit-column">
+                            <h4>AI Development Stack</h4>
+                            <div class="toolkit-tags">
+                                <span class="toolkit-tag">Claude Code</span>
+                                <span class="toolkit-tag">Cursor</span>
+                                <span class="toolkit-tag">GitHub</span>
+                                <span class="toolkit-tag">Supabase</span>
+                                <span class="toolkit-tag">Vercel</span>
+                                <span class="toolkit-tag">Figma</span>
+                                <span class="toolkit-tag">Bolt</span>
+                                <span class="toolkit-tag">Lovable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Story Section -->
+    <section id="my-story" class="my-story">
+        <div class="section-container">
+            <div class="story-content">
+                <p class="section-label">My Story</p>
+                <h2 class="section-title">The path here wasn't linear.</h2>
+
+                <p>I grew up in Santa Cruz, California—a beach kid who loved riding my bike around town so much I didn't get my driver's license until 18. (Why would I? My little beach town had everything I needed.)</p>
+
+                <p>Technology wasn't the plan. Education and leadership development were my focus. But after some life pivots, I found myself working in a hospital, pursued my Master's in Healthcare Administration, and got pulled into early EHR implementation work. <strong>Healthcare technology found me</strong>—and I've been here ever since.</p>
+
+                <p>These days, the creative spark that drew me to applied arts in high school has come full circle. I'm fascinated by how AI enables new kinds of problem-solving and creativity.</p>
+
+                <div class="story-images">
+                    <div class="story-image-placeholder">Your photo here</div>
+                    <div class="story-image-placeholder">Your photo here</div>
+                </div>
+
+                <p>When I'm not working, you'll find me in California's Gold Country—taking long walks, enjoying good coffee and artful dark chocolate, tending my garden, and yes, hanging out with my chickens. After years in bigger places, the small-town exhale feels like home. I guess it always stuck with me.</p>
+
+                <div class="story-highlight">
+                    <p><strong>Family is everything.</strong> Married 23 years, two grown sons (22 and 20), and a one-year-old grandbaby who makes it all worth it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How I Work Section -->
+    <section id="process" class="process">
+        <div class="section-container">
+            <p class="section-label">How I Work</p>
+            <h2 class="section-title">From problem to pathway.</h2>
+            <p class="process-intro">I don't do jargon-heavy frameworks or death by PowerPoint. I do clear thinking, real partnership, and solutions that actually get implemented.</p>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">01</div>
+                    <h3>Listen</h3>
+                    <p>Deeply understand the real problem—not just symptoms. What's the desired outcome? What's getting in the way?</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">02</div>
+                    <h3>Architect</h3>
+                    <p>Map the people, process, and platform decisions. Build alignment with stakeholders. Chart a clear path forward.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">03</div>
+                    <h3>Build</h3>
+                    <p>Execute thoughtfully—whether that's process redesign, technology implementation, or AI-enabled solutions.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">04</div>
+                    <h3>Sustain</h3>
+                    <p>Make sure it actually sticks. Solutions that work for the humans using them, not just look good on paper.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="capabilities">
+        <div class="section-container">
+            <p class="section-label">What I Bring</p>
+            <h2 class="section-title">Practical expertise, delivered clearly.</h2>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 12h4l3-9 4 18 3-9h4"/>
+                            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Process Optimization</h3>
+                    <p>Identify inefficiencies, eliminate waste, and design workflows that stick—using proven methodologies like Lean Six Sigma, not guesswork.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>AI-Enabled Solutions</h3>
+                    <p>Cut through the hype. I've led AI implementations from pilot to enterprise rollout—and know what actually moves the needle versus what just sounds impressive.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Change Leadership</h3>
+                    <p>Navigate complex stakeholder dynamics. Build buy-in from front-line staff to executives. Make change feel achievable.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3>Performance Excellence</h3>
+                    <p>Establish meaningful metrics. Create visibility into what's working. Build cultures of continuous improvement.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M9 3v18"/>
+                            <path d="M15 3v18"/>
+                            <path d="M3 9h18"/>
+                            <path d="M3 15h18"/>
+                        </svg>
+                    </div>
+                    <h3>Technology Strategy</h3>
+                    <p>Evaluate platforms, plan implementations, and ensure technology decisions serve business outcomes—not the other way around.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Value Realization</h3>
+                    <p>Translate initiatives into measurable impact. Build business cases that resonate. Prove ROI in language leadership understands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="impact" class="impact">
+        <div class="section-container">
+            <p class="section-label">Work</p>
+            <h2 class="section-title">I build tools that make complex things simple.</h2>
+            <p class="impact-intro">When I see a problem that technology could solve, I don't just talk about it—I build something. Here are a few examples.</p>
+            
+            <div class="portfolio-showcase">
+                <div class="portfolio-item featured">
+                    <div class="portfolio-content">
+                        <p class="portfolio-label">Featured Project</p>
+                        <h3>EHR Governance Assistant</h3>
+                        <div class="portfolio-problem">
+                            <strong>The Problem:</strong> Enterprise EHR governance involves multiple committees, complex approval workflows, and dozens of stakeholders. People get lost, confused, and frustrated trying to navigate the process.
+                        </div>
+                        <div class="portfolio-solution">
+                            <strong>The Solution:</strong> An intuitive process navigator that breaks down each stage of governance into clear, actionable steps. Combined with an AI assistant that answers questions in plain language, it becomes the "easy button" for anyone—from front-line clinicians to executives—to understand where they are and what happens next.
+                        </div>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">AI Integration</span>
+                            <span class="tech-tag">Process Design</span>
+                        </div>
+                        <a href="https://sophiav2.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">View App in Action →</a>
+                    </div>
+                    <div class="portfolio-visual">
+                        <div class="portfolio-placeholder">
+                            <div class="placeholder-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                                    <rect x="9" y="3" width="6" height="4" rx="1"/>
+                                    <path d="M9 12h6"/>
+                                    <path d="M9 16h6"/>
+                                </svg>
+                            </div>
+                            <p>EHR Governance Assistant</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item featured">
+                    <div class="portfolio-content">
+                        <p class="portfolio-label">Featured Project</p>
+                        <h3>VytalPath Academy</h3>
+                        <div class="portfolio-problem">
+                            <strong>The Problem:</strong> New front office healthcare staff—especially career changers from closing factories and other industries—face an overwhelming first day. Medical jargon, insurance workflows, HIPAA compliance, and clinic procedures all at once. The result? Anxiety, costly mistakes, and high turnover in critical roles.
+                        </div>
+                        <div class="portfolio-solution">
+                            <strong>The Solution:</strong> A comprehensive training and reference platform built specifically for new clinic staff. 1,000+ healthcare terms in plain language, step-by-step workflows, HIPAA training modules, and smart search that finds answers instantly. They can learn before day one, reference during training, and look things up on the job—all from their phone or desktop.
+                        </div>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">React + TypeScript</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Mobile-First Design</span>
+                        </div>
+                        <a href="https://vytalpathdemo.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">View Platform Demo →</a>
+                    </div>
+                    <div class="portfolio-visual">
+                        <div class="portfolio-placeholder">
+                            <div class="placeholder-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                </svg>
+                            </div>
+                            <p>Healthcare Training Platform</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-more">
+                    <p>More projects coming soon—including GovernIQ, a comprehensive workflow system for taking ideas from concept through governance to performance tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaking Section -->
+    <section id="speaking" class="speaking">
+        <div class="section-container">
+            <div class="speaking-card">
+                <div class="speaking-content">
+                    <p class="section-label">Speaking</p>
+                    <h3>Sharing what I've learned.</h3>
+                    <p>I speak about practical approaches to technology adoption, change leadership, and building organizations that actually improve—without the consultant-speak.</p>
+                    <a href="#contact" class="btn btn-primary">Invite Me to Speak</a>
+                </div>
+                <div class="speaking-details">
+                    <div class="speaking-event">
+                        <p class="event-label">Upcoming</p>
+                        <p class="event-title">Arizona ANIA December 2025 Education Series</p>
+                        <p class="event-org">American Nursing Informatics Association - Arizona Chapter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-container">
+            <p class="section-label">Let's Connect</p>
+            <h2 class="section-title">Consulting. Speaking. Coaching.</h2>
+            <p class="contact-subtitle">Whether you need strategic guidance, a keynote that resonates, or hands-on coaching for your team—let's start with a conversation.</p>
+            <a href="mailto:marty.koepke@practicalinformatics.com" class="contact-email">marty.koepke@practicalinformatics.com</a>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/marty-koepke/" class="social-link" target="_blank" rel="noopener">in</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Marty Koepke. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.process-card, .capability-card, .portfolio-item, .speaking-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Nav background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // For the Curious toggle
+        function toggleCurious() {
+            const content = document.getElementById('curious-content');
+            const toggle = document.querySelector('.curious-toggle');
+            content.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
