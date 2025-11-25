@@ -1010,6 +1010,142 @@
             color: var(--color-text-muted);
         }
 
+        /* Company Section */
+        .company {
+            background: var(--color-bg);
+        }
+
+        .company-card {
+            background: linear-gradient(135deg, var(--color-bg-alt) 0%, white 100%);
+            border-radius: 24px;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            align-items: center;
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .company-content h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-tagline {
+            font-size: 1.1rem;
+            color: var(--color-accent);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .company-content p {
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .company-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .company-service-tag {
+            background: var(--color-accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Book Section */
+        .book {
+            background: var(--color-bg-alt);
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 24px;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: center;
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.06);
+        }
+
+        .book-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .book-content h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-accent);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .book-content p {
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .book-highlights {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding: 0;
+        }
+
+        .book-highlights li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-muted);
+        }
+
+        .book-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .book-cta {
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .company-card {
+                grid-template-columns: 1fr;
+                padding: 2.5rem;
+            }
+
+            .book-card {
+                grid-template-columns: 1fr;
+                padding: 2.5rem;
+            }
+
+            .book-image {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+        }
+
         /* Footer */
         footer {
             background: var(--color-deep);
@@ -1368,6 +1504,62 @@
         </div>
     </section>
 
+    <!-- Company Section -->
+    <section id="company" class="company">
+        <div class="section-container">
+            <p class="section-label">The Company</p>
+            <h2 class="section-title">Practical Informatics LLC</h2>
+            <div class="company-card">
+                <div class="company-content">
+                    <h3>A passion project, one year young.</h3>
+                    <p class="company-tagline">Taking what I know and serving the world around me.</p>
+                    <p>Practical Informatics started with a simple idea: use everything I've learned over 15+ years to help real people who struggle with real things.</p>
+                    <p>Whether you're trying to break into healthcare technology, looking to leverage AI to make your work life easier, or need a custom solution designed for a real-world pain point—I'm here to help.</p>
+                    <p>This isn't a big consulting firm with layers of overhead. It's me, bringing practical experience directly to the problems that matter to you.</p>
+                </div>
+                <div class="company-services-wrapper">
+                    <p style="font-weight: 600; margin-bottom: 1rem; color: var(--color-text);">How I can help:</p>
+                    <div class="company-services">
+                        <span class="company-service-tag">Career Guidance</span>
+                        <span class="company-service-tag">AI Implementation</span>
+                        <span class="company-service-tag">Custom Solutions</span>
+                        <span class="company-service-tag">Process Design</span>
+                        <span class="company-service-tag">Coaching</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Section -->
+    <section id="book" class="book">
+        <div class="section-container">
+            <p class="section-label">The Book</p>
+            <h2 class="section-title">For those stepping into informatics.</h2>
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="book-between-the-clicks.jpg" alt="Between the Clicks book cover">
+                </div>
+                <div class="book-content">
+                    <h3>Between the Clicks</h3>
+                    <p class="book-subtitle">The Hidden Work of Healthcare Informatics</p>
+                    <p>Healthcare informatics isn't just about optimizing EHRs or streamlining documentation—it's about making technology work for people. It's about ensuring workflows make sense, guiding teams through meaningful change, and keeping the focus where it belongs: on patient care.</p>
+                    <p>If you've ever sat in a meeting, listening to conflicting priorities, staring at a complex problem, and wondering, "What exactly am I supposed to do here?"—you're not alone.</p>
+                    <ul class="book-highlights">
+                        <li>Break down complex problems with structure</li>
+                        <li>Translate clinical needs into effective system designs</li>
+                        <li>Navigate governance, decision-making, and change</li>
+                        <li>Embrace continuous learning in an evolving field</li>
+                    </ul>
+                    <p><strong>This isn't a textbook.</strong> It's a guide, a mentor, and a roadmap for anyone stepping into informatics or looking to refine their skills.</p>
+                    <div class="book-cta">
+                        <a href="https://a.co/d/ivCKeGo" target="_blank" rel="noopener" class="btn btn-primary">Get the Book on Amazon →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section id="impact" class="impact">
         <div class="section-container">
@@ -1480,7 +1672,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Marty Koepke. All rights reserved.</p>
+        <p>&copy; 2025 Practical Informatics LLC. All rights reserved.</p>
     </footer>
 
     <script>
@@ -1499,7 +1691,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.process-card, .capability-card, .portfolio-item, .speaking-card').forEach(el => {
+        document.querySelectorAll('.process-card, .capability-card, .portfolio-item, .speaking-card, .company-card, .book-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
