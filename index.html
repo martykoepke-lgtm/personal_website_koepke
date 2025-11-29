@@ -1228,14 +1228,14 @@
             }
         }
 
-        /* Scroll animation classes - content visible by default for SEO/crawlers */
-        .animate-on-scroll {
+        /* Scroll animation classes - JS adds .js-enabled to html element first */
+        html.js-enabled .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
         }
 
-        .animate-on-scroll.visible {
+        html.js-enabled .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -1780,6 +1780,9 @@
     </footer>
 
     <script>
+        // Enable animations only when JS runs
+        document.documentElement.classList.add('js-enabled');
+
         // Simple scroll-triggered animations
         const observerOptions = {
             threshold: 0.1,
