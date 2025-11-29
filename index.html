@@ -1687,11 +1687,36 @@
             }
 
             .hero-photo {
-                max-width: 280px;
+                max-width: 200px;
             }
 
             .hero {
-                padding: 2rem 1.5rem 4rem;
+                min-height: auto;
+                padding: 1.5rem 1.5rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-greeting {
+                margin-bottom: 0.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+                text-align: center;
             }
 
             .about-grid {
@@ -2290,7 +2315,6 @@
                     <li>How to scope an idea that's actually buildable</li>
                     <li>Setting up your environment (Cursor, Claude, Supabase, Vercel, GitHub)</li>
                     <li>Prompting strategies that get AI to build with you, not just for you</li>
-                    <li>Reading and troubleshooting database schemas (including spotting security issues)</li>
                     <li>Iterating when things break (they will)</li>
                     <li>Shipping something real</li>
                 </ul>
