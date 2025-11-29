@@ -119,9 +119,37 @@
             pointer-events: none;
         }
 
-        .hero-content {
-            max-width: 900px;
+        .hero-inner {
+            max-width: 1100px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .hero-photo {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .hero-content {
             position: relative;
             z-index: 1;
         }
@@ -163,10 +191,16 @@
             animation-delay: 0.6s;
         }
 
+        .hero-cta-wrapper {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
         .hero-cta {
-            display: flex;
+            display: inline-flex;
             gap: 1rem;
             flex-wrap: wrap;
+            justify-content: center;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
             animation-delay: 0.8s;
@@ -259,6 +293,22 @@
             height: auto;
             display: block;
             border-radius: 20px;
+        }
+
+        .about-content.about-centered {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content.about-centered .section-label,
+        .about-content.about-centered .section-title {
+            text-align: center;
+        }
+
+        .about-content.about-centered .belief-list {
+            display: inline-block;
+            text-align: left;
         }
 
         .about-content p {
@@ -1211,6 +1261,20 @@
                 display: none;
             }
 
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                justify-content: center;
+                order: -1;
+            }
+
+            .hero-photo {
+                max-width: 280px;
+            }
+
             .about-grid {
                 grid-template-columns: 1fr;
             }
@@ -1263,15 +1327,24 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <p class="hero-greeting">Hi, I'm Marty</p>
-            <h1>I help organizations move from <span class="highlight">stuck</span> to <span class="highlight">solved.</span></h1>
-            <p class="hero-subtitle">Real problems deserve thoughtful solutions that actually work. I meet people where they are and architect paths to meaningful, lasting change.</p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">Let's Talk</a>
-                <a href="#process" class="btn btn-secondary">How I Work</a>
-                <a href="#company" class="btn btn-secondary">The Company</a>
-                <a href="#book" class="btn btn-secondary">The Book</a>
+        <div class="hero-inner">
+            <div class="hero-grid">
+                <div class="hero-image">
+                    <img src="IMG_8527.jpg" alt="Marty Koepke" class="hero-photo">
+                </div>
+                <div class="hero-content">
+                    <p class="hero-greeting">Hi, I'm Marty</p>
+                    <h1>I help organizations move from <span class="highlight">stuck</span> to <span class="highlight">solved.</span></h1>
+                    <p class="hero-subtitle">Real problems deserve thoughtful solutions that actually work. I meet people where they are and architect paths to meaningful, lasting change.</p>
+                </div>
+            </div>
+            <div class="hero-cta-wrapper">
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                    <a href="#process" class="btn btn-secondary">How I Work</a>
+                    <a href="#company" class="btn btn-secondary">The Company</a>
+                    <a href="#book" class="btn btn-secondary">The Book</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1279,22 +1352,17 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="section-container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="IMG_8527.jpg" alt="Marty Koepke" class="about-photo">
-                </div>
-                <div class="about-content">
-                    <p class="section-label">About Me</p>
-                    <h2 class="section-title">Change doesn't have to be complicated.</h2>
-                    <p>I've spent more than 15 years solving complex problems across healthcare, technology, and organizational transformation—including enterprise systems with 2,200+ care sites and 25,000+ providers. But here's what I've learned: <strong>the best solutions are the ones people actually use.</strong></p>
-                    <p>I'm just as comfortable sitting with a front-desk receptionist as I am with a C-suite executive. Because real understanding requires listening at every level—from strategic vision to the daily reality of the people doing the work.</p>
-                    <p>I haven't found a technology that intimidates me yet. From process optimization to AI-enabled software development, I dig in, learn fast, and build solutions that stick.</p>
-                    <ul class="belief-list">
-                        <li>Every solution impacts real humans—design for them</li>
-                        <li>Success should be tangible and easy to understand</li>
-                        <li>The right path forward is clearer than it seems</li>
-                    </ul>
-                </div>
+            <div class="about-content about-centered">
+                <p class="section-label">About Me</p>
+                <h2 class="section-title">Change doesn't have to be complicated.</h2>
+                <p>I've spent more than 15 years solving complex problems across healthcare, technology, and organizational transformation—including enterprise systems with 2,200+ care sites and 25,000+ providers. But here's what I've learned: <strong>the best solutions are the ones people actually use.</strong></p>
+                <p>I'm just as comfortable sitting with a front-desk receptionist as I am with a C-suite executive. Because real understanding requires listening at every level—from strategic vision to the daily reality of the people doing the work.</p>
+                <p>I haven't found a technology that intimidates me yet. From process optimization to AI-enabled software development, I dig in, learn fast, and build solutions that stick.</p>
+                <ul class="belief-list">
+                    <li>Every solution impacts real humans—design for them</li>
+                    <li>Success should be tangible and easy to understand</li>
+                    <li>The right path forward is clearer than it seems</li>
+                </ul>
             </div>
         </div>
     </section>
