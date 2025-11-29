@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marty Koepke | Real Problems. Thoughtful Solutions.</title>
+    <meta name="description" content="I help organizations move from stuck to solved. 15+ years solving complex problems across healthcare, technology, and organizational transformation. Consulting and coaching from Practical Informatics LLC.">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Marty Koepke | Real Problems. Thoughtful Solutions.">
+    <meta property="og:description" content="I help organizations move from stuck to solved. Real problems deserve thoughtful solutions that actually work.">
+    <meta property="og:image" content="IMG_8527.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marty Koepke | Real Problems. Thoughtful Solutions.">
+    <meta name="twitter:description" content="I help organizations move from stuck to solved. Real problems deserve thoughtful solutions that actually work.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
@@ -1215,6 +1228,18 @@
             }
         }
 
+        /* Scroll animation classes - content visible by default for SEO/crawlers */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .process-grid {
@@ -1309,6 +1334,21 @@
             }
         }
     </style>
+    <noscript>
+        <style>
+            /* Ensure all content is visible when JavaScript is disabled */
+            .animate-on-scroll,
+            .process-card,
+            .capability-card,
+            .portfolio-item,
+            .speaking-card,
+            .company-card,
+            .book-card {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
 </head>
 <body>
     <!-- Navigation -->
@@ -1749,16 +1789,13 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
         document.querySelectorAll('.process-card, .capability-card, .portfolio-item, .speaking-card, .company-card, .book-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
+            el.classList.add('animate-on-scroll');
             observer.observe(el);
         });
 
