@@ -1383,6 +1383,65 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .modal-screenshot img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Lightbox for expanded screenshot view */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-close svg {
+            width: 24px;
+            height: 24px;
         }
 
         .modal-content {
@@ -2053,7 +2112,7 @@
             <div class="modal-content">
                 <div class="modal-section">
                     <h4>The Problem</h4>
-                    <p>Senior living facilities, churches, and community centers manage dozens of recurring activities across multiple buildings — often with spreadsheets, paper calendars, and guesswork about supplies.</p>
+                    <p>Senior living facilities manage dozens of recurring activities across multiple buildings — often with spreadsheets, paper calendars, and guesswork about supplies.</p>
                 </div>
                 <div class="modal-section">
                     <h4>The Solution</h4>
@@ -2087,10 +2146,10 @@
                 <p class="modal-subtitle">Enterprise work management and capacity planning</p>
             </div>
             <div class="modal-screenshots">
-                <div class="modal-screenshot">Dashboard Overview</div>
-                <div class="modal-screenshot">Capacity Cards</div>
-                <div class="modal-screenshot">Initiative Form</div>
-                <div class="modal-screenshot">Admin Panel</div>
+                <div class="modal-screenshot"><img src="Govern IQ Site Pics/Screenshot 2025-11-30 100902.png" alt="GovernIQ Analytics Dashboard"></div>
+                <div class="modal-screenshot"><img src="Govern IQ Site Pics/Screenshot 2025-11-30 100848.png" alt="GovernIQ Team Capacity View"></div>
+                <div class="modal-screenshot"><img src="Govern IQ Site Pics/Screenshot 2025-11-30 101040.png" alt="GovernIQ Request Management"></div>
+                <div class="modal-screenshot"><img src="Govern IQ Site Pics/Screenshot 2025-11-28 200224.png" alt="GovernIQ Field Options Management"></div>
             </div>
             <div class="modal-content">
                 <div class="modal-section">
@@ -2326,6 +2385,17 @@
         <p>&copy; 2025 Practical Informatics LLC. All rights reserved.</p>
     </footer>
 
+    <!-- Lightbox for expanded screenshots -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="Expanded screenshot">
+    </div>
+
     <script>
         // Enable animations only when JS runs
         document.documentElement.classList.add('js-enabled');
@@ -2398,9 +2468,37 @@
             }
         }
 
+        // Lightbox functions
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // Add click handlers to modal screenshots
+        document.querySelectorAll('.modal-screenshot img').forEach(img => {
+            img.addEventListener('click', function(e) {
+                e.stopPropagation();
+                openLightbox(this.src);
+            });
+        });
+
         // Close modal on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
+                // Close lightbox first if open
+                const lightbox = document.getElementById('lightbox');
+                if (lightbox.classList.contains('active')) {
+                    closeLightbox();
+                    return;
+                }
+                // Then close modals
                 document.querySelectorAll('.modal-overlay.active').forEach(modal => {
                     modal.classList.remove('active');
                     document.body.style.overflow = '';
