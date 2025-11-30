@@ -283,6 +283,371 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Ship It Section Styles */
+        .section-header {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .section-body {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            line-height: 1.8;
+        }
+
+        .section-body p {
+            margin-bottom: 1rem;
+        }
+
+        /* Nav CTA */
+        .nav-cta {
+            background: var(--color-accent);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent-dark);
+        }
+
+        /* Hero CTA Inline */
+        .hero-cta-inline {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .price-anchor {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+        }
+
+        .price-anchor .old-price {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .price-anchor .new-price {
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: var(--color-bg-alt);
+            padding: 3rem 2rem;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding: 0;
+        }
+
+        .problem-list li {
+            padding: 0.6rem 0;
+            font-size: 1.05rem;
+            color: var(--color-text);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .problem-list .icon {
+            color: #e74c3c;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .callout {
+            background: white;
+            border-left: 4px solid var(--color-accent);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: var(--color-bg);
+            padding: 3rem 2rem;
+        }
+
+        .solution-list {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding: 0;
+        }
+
+        .solution-list li {
+            padding: 0.6rem 0;
+            font-size: 1.05rem;
+            color: var(--color-text);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .solution-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        /* Program Section */
+        .program {
+            background: var(--color-bg-alt);
+            padding: 3rem 2rem;
+        }
+
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .phase-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .phase-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--color-accent);
+        }
+
+        .phase-card .phase-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+
+        .phase-card p {
+            color: var(--color-text-muted);
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .phase-card .deliverable {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            font-style: italic;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--color-bg-alt);
+        }
+
+        /* Included Section */
+        .included {
+            background: var(--color-bg);
+            padding: 3rem 2rem;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .included-card {
+            background: var(--color-bg-alt);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+
+        .included-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+
+        .included-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .included-card li {
+            padding: 0.35rem 0;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: linear-gradient(135deg, var(--color-deep) 0%, #2D3E50 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .pricing .section-header {
+            color: white;
+        }
+
+        .pricing .section-body {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .value-stack {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+            text-align: left;
+        }
+
+        .value-stack h4 {
+            font-family: var(--font-display);
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+
+        .value-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .value-row:last-child {
+            border-bottom: none;
+            padding-top: 0.75rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .price-display {
+            margin: 1.5rem 0;
+        }
+
+        .price-display .old {
+            font-size: 1.25rem;
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .price-display .current {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            display: block;
+        }
+
+        .price-display .label {
+            color: var(--color-accent-light);
+            font-weight: 600;
+        }
+
+        .guarantee {
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.95rem;
+        }
+
+        .guarantee strong {
+            color: var(--color-accent-light);
+        }
+
+        /* Who Section */
+        .who {
+            background: var(--color-bg-alt);
+            padding: 3rem 2rem;
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .fit-list, .not-fit-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fit-list li, .not-fit-list li {
+            padding: 0.5rem 0;
+            font-size: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .fit-list .icon {
+            color: #27ae60;
+        }
+
+        .not-fit-list .icon {
+            color: var(--color-text-muted);
+        }
+
+        .not-fit h3 {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--color-bg);
+            padding: 3rem 2rem;
+        }
+
+        .faq-list {
+            margin-top: 1.5rem;
+        }
+
+        .faq-item {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--color-bg-alt);
+        }
+
+        .faq-item h3 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+
+        .faq-item p {
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
         /* About Section */
         .about {
             background: var(--color-bg-alt);
@@ -1752,6 +2117,57 @@
             section {
                 padding: 4rem 1.5rem;
             }
+
+            /* Ship It Mobile Styles */
+            .nav-cta {
+                display: none;
+            }
+
+            .hero-cta-inline {
+                align-items: center;
+                text-align: center;
+            }
+
+            .problem, .solution, .program, .included, .pricing, .who, .faq {
+                padding: 2rem 1.5rem;
+            }
+
+            .phase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .who-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .value-stack {
+                padding: 1.25rem;
+            }
+
+            .price-display .current {
+                font-size: 2.5rem;
+            }
+
+            .section-header {
+                font-size: 1.5rem;
+            }
+
+            .competency-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .curious-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .toolkit-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <noscript>
@@ -1778,9 +2194,9 @@
             <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#book">The Book</a></li>
-            <li><a href="ship-it.html">Learn</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <a href="https://tally.so/r/xXVPgo" target="_blank" rel="noopener" class="nav-cta">Apply Now</a>
     </nav>
 
     <!-- Hero Section -->
@@ -1791,17 +2207,220 @@
                     <img src="IMG_8527.jpg" alt="Marty Koepke" class="hero-photo">
                 </div>
                 <div class="hero-content">
-                    <p class="hero-greeting">Hi, I'm Marty</p>
-                    <h1>I help people go from <span class="highlight">idea</span> to <span class="highlight">working app.</span></h1>
-                    <p class="hero-subtitle">I build tools that turn complex problems into working software. I wrote the book on breaking into healthcare informatics. And I teach others how to build something real — using AI as both the toolbox and the teacher.</p>
+                    <h1>You have an app idea. Let's make it <span class="highlight">real.</span></h1>
+                    <p class="hero-subtitle">"Vibe coding" promises fast results — but the learning curve burns through tokens, the costs add up, and you end up with a broken demo instead of a real product. In 8 weeks, you'll build a working app with AI at every step — from planning to deployment — and understand how to maintain it.</p>
+                    <div class="hero-cta-inline">
+                        <a href="https://tally.so/r/xXVPgo" target="_blank" rel="noopener" class="btn btn-primary">Apply Now</a>
+                        <p class="price-anchor"><strong>2026 Early Access:</strong> <span class="old-price">$3,500</span> <span class="new-price">$2,000</span></p>
+                    </div>
                 </div>
             </div>
-            <div class="hero-cta-wrapper">
-                <div class="hero-cta">
-                    <a href="ship-it.html" class="btn btn-primary">Learn With Me</a>
-                    <a href="#contact" class="btn btn-secondary">Let's Talk</a>
-                    <a href="#work" class="btn btn-secondary">See My Work</a>
-                    <a href="#book" class="btn btn-secondary">The Book</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="section-container">
+            <h2 class="section-header">The "Vibe Coding" Trap</h2>
+            <div class="section-body">
+                <p>You've seen the hype. "Build an app in 60 minutes!" So you tried Bolt, Replit, or Lovable. Maybe you got something that looked like an app.</p>
+                <p>Then reality hit:</p>
+            </div>
+            <ul class="problem-list">
+                <li><span class="icon">✗</span> This is taking way more prompts than you expected — and the AI credits are adding up</li>
+                <li><span class="icon">✗</span> Something broke and you had no idea why</li>
+                <li><span class="icon">✗</span> You couldn't deploy it to a real domain</li>
+                <li><span class="icon">✗</span> Payments? Privacy policies? App store submission? Nobody mentioned those.</li>
+                <li><span class="icon">✗</span> You had a demo, not a product</li>
+            </ul>
+            <div class="section-body">
+                <p>So you gave up. Or started over. Again.</p>
+            </div>
+            <div class="callout">
+                The tools are powerful. But without context, you're burning time and money guessing.
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="section-container">
+            <h2 class="section-header">Context-First App Building</h2>
+            <div class="section-body">
+                <p>I don't teach you to "vibe code." I teach you to <strong>ship.</strong></p>
+                <p>That means understanding:</p>
+            </div>
+            <ul class="solution-list">
+                <li>What problem you're actually solving (before you write a prompt)</li>
+                <li>How to fix what breaks — without starting over</li>
+                <li>The full stack: domain, hosting, email, payments, legal</li>
+                <li>How to maintain what you built (so it doesn't become technical debt)</li>
+            </ul>
+            <div class="callout">
+                You'll leave with a working app AND the knowledge to keep building.
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section class="program">
+        <div class="section-container">
+            <h2 class="section-header">The 8-Week Accelerator</h2>
+            <div class="phase-grid">
+                <div class="phase-card">
+                    <h3>Phase 1</h3>
+                    <p class="phase-title">Clarity (Weeks 1-2)</p>
+                    <p>Define the problem worth solving. Scope the MVP. Create a wireframe you can actually build.</p>
+                    <p class="deliverable"><strong>You'll have:</strong> Problem statement, target user, MVP scope, wireframe</p>
+                </div>
+                <div class="phase-card">
+                    <h3>Phase 2</h3>
+                    <p class="phase-title">Architecture (Weeks 3-4)</p>
+                    <p>Set up your tools. Design your data structure. Establish your codebase.</p>
+                    <p class="deliverable"><strong>You'll have:</strong> Tech stack configured, database schema, GitHub repo</p>
+                </div>
+                <div class="phase-card">
+                    <h3>Phase 3</h3>
+                    <p class="phase-title">Build (Weeks 5-6)</p>
+                    <p>Construct your MVP with AI assistance. Debug together. Iterate based on what works.</p>
+                    <p class="deliverable"><strong>You'll have:</strong> Working prototype, tested and refined</p>
+                </div>
+                <div class="phase-card">
+                    <h3>Phase 4</h3>
+                    <p class="phase-title">Launch (Weeks 7-8)</p>
+                    <p>Deploy to production. Set up your domain, email, payments, legal. Document everything.</p>
+                    <p class="deliverable"><strong>You'll have:</strong> Live app on your domain, documentation, maintenance plan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section class="included">
+        <div class="section-container">
+            <h2 class="section-header">Everything You Need to Ship</h2>
+            <div class="included-grid">
+                <div class="included-card">
+                    <h3>Coaching</h3>
+                    <ul>
+                        <li>8 x 60-minute 1:1 sessions</li>
+                        <li>Async support between calls (Slack or email)</li>
+                    </ul>
+                </div>
+                <div class="included-card">
+                    <h3>Deliverables</h3>
+                    <ul>
+                        <li>Working deployed app</li>
+                        <li>Custom domain setup</li>
+                        <li>GitHub repo with clean code</li>
+                        <li>Documentation for maintenance</li>
+                    </ul>
+                </div>
+                <div class="included-card">
+                    <h3>Resources & Guides</h3>
+                    <ul>
+                        <li>PRD template</li>
+                        <li>Prompting playbook</li>
+                        <li>Tech stack decision guide</li>
+                        <li>Privacy policy + ToS setup</li>
+                        <li>Payments integration (Stripe)</li>
+                        <li>True cost calculator</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="section-container">
+            <h2 class="section-header">2026 Early Access</h2>
+            <div class="section-body">
+                <p>I only take three clients at a time so I can give each project the attention it deserves. Lock in 2026 pricing now — before rates increase in the new year.</p>
+            </div>
+            <div class="value-stack">
+                <h4>What You Get</h4>
+                <div class="value-row"><span>8 weeks of 1:1 coaching</span><span>$1,600</span></div>
+                <div class="value-row"><span>Async support</span><span>$400</span></div>
+                <div class="value-row"><span>Templates + guides</span><span>$500</span></div>
+                <div class="value-row"><span>Deployment + legal setup</span><span>$300</span></div>
+                <div class="value-row"><span>Ongoing reference materials</span><span>$200</span></div>
+                <div class="value-row"><span>Total Value</span><span>$3,000+</span></div>
+            </div>
+            <div class="price-display">
+                <span class="old">$3,500</span>
+                <span class="current">$2,000</span>
+                <span class="label">2026 Early Access Rate</span>
+            </div>
+            <a href="https://tally.so/r/xXVPgo" target="_blank" rel="noopener" class="btn btn-primary">Apply Now</a>
+            <div class="guarantee">
+                <strong>Ship or keep going.</strong> If you don't have a working, deployed app by Week 8, I'll keep working with you until you do.
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For Section -->
+    <section class="who">
+        <div class="section-container">
+            <h2 class="section-header">This Is For You If:</h2>
+            <div class="who-grid">
+                <div class="fit">
+                    <ul class="fit-list">
+                        <li><span class="icon">✓</span> You have an idea for an app, tool, or product</li>
+                        <li><span class="icon">✓</span> You've played with AI builders but hit walls</li>
+                        <li><span class="icon">✓</span> You want to understand what you're building — not just copy-paste and pray</li>
+                        <li><span class="icon">✓</span> You're ready to commit 3-5 hours/week for 8 weeks</li>
+                        <li><span class="icon">✓</span> You want something real, not another tutorial</li>
+                    </ul>
+                </div>
+                <div class="not-fit">
+                    <h3>This is NOT for you if:</h3>
+                    <ul class="not-fit-list">
+                        <li><span class="icon">—</span> You want to become a full-time software developer</li>
+                        <li><span class="icon">—</span> You're looking for done-for-you development</li>
+                        <li><span class="icon">—</span> You need an enterprise platform built by a team</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="section-container">
+            <h2 class="section-header">Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Do I need coding experience?</h3>
+                    <p>No. But you should be comfortable learning new tools and willing to read documentation when needed. I'll teach you how to understand what the AI generates.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What kind of app can I build?</h3>
+                    <p>Internal tools, MVPs, simple SaaS products, portfolio projects, client-facing apps. Not games or complex enterprise platforms.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What tools will we use?</h3>
+                    <p>Cursor (AI-assisted coding), Supabase (database + auth), Vercel (hosting), and Claude or ChatGPT for prompting. All have generous free tiers.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's the time commitment?</h3>
+                    <p>3-5 hours per week: one 60-minute call plus 2-4 hours building between sessions.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if I don't finish in 8 weeks?</h3>
+                    <p>We keep going until you ship. No extra charge.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if my idea isn't right?</h3>
+                    <p>That's part of the process. We'll figure that out in the first two weeks — before you've invested build time in the wrong direction.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Why only three clients at a time?</h3>
+                    <p>Because this is real 1:1 work, not a course you watch alone. I'm in the details with you. That only works with a small number of people.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>When does it start?</h3>
+                    <p>We'll kick off in January 2026. Apply now to secure your spot and lock in the early access rate.</p>
                 </div>
             </div>
         </div>
@@ -1812,216 +2431,15 @@
         <div class="section-container">
             <div class="about-content about-centered">
                 <p class="section-label">About Me</p>
-                <h2 class="section-title">Change doesn't have to be complicated.</h2>
-                <p>I've spent more than 15 years solving complex problems across healthcare, technology, and organizational transformation—including enterprise systems with 2,200+ care sites and 25,000+ providers. But here's what I've learned: <strong>the best solutions are the ones people actually use.</strong></p>
-                <p>I'm just as comfortable sitting with a front-desk receptionist as I am with a C-suite executive. Because real understanding requires listening at every level—from strategic vision to the daily reality of the people doing the work.</p>
-                <p>I haven't found a technology that intimidates me yet. From process optimization to AI-enabled software development, I dig in, learn fast, and build solutions that stick. These days, I'm equally energized by teaching others to do the same.</p>
-                <ul class="belief-list">
-                    <li>Every solution impacts real humans—design for them</li>
-                    <li>Success should be tangible and easy to understand</li>
-                    <li>The right path forward is clearer than it seems</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- For the Curious Section -->
-    <section class="curious-section">
-        <div class="section-container">
-            <div class="curious-wrapper">
-                <button class="curious-toggle" onclick="toggleCurious()">
-                    For the Curious
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>
-                <div class="curious-content" id="curious-content">
-                <!-- What I'm Good At -->
-                <div class="curious-section-group">
-                    <h3 class="curious-section-title">What I'm Good At</h3>
-                    <div class="curious-grid">
-                        <div class="curious-card">
-                            <h4>How I Work With People</h4>
-                            <p>I run meetings that don't waste time. I help executives and front-line staff find common ground. I turn big goals into step-by-step plans that everyone can follow.</p>
-                        </div>
-                        <div class="curious-card">
-                            <h4>Making Systems Work Together</h4>
-                            <p>Healthcare runs on software that often doesn't talk to each other. I figure out how to connect those systems so information flows where it needs to go—without creating more headaches for the people using them.</p>
-                        </div>
-                        <div class="curious-card">
-                            <h4>Putting AI to Actual Use</h4>
-                            <p>Everyone's talking about AI. I'm actually using it—and helping organizations figure out where it makes sense and where it's just noise. I also build my own tools when I see a problem worth solving.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Background -->
-                <div class="curious-section-group">
-                    <h3 class="curious-section-title">Background</h3>
-                    <div class="curious-grid">
-                        <div class="curious-card">
-                            <h4>Education</h4>
-                            <p>Master's degree in Healthcare Administration. Undergrad in Christian Education. The combination taught me to think about both systems and people—which turns out to be the whole job.</p>
-                        </div>
-                        <div class="curious-card">
-                            <h4>Certifications</h4>
-                            <p>Lean Six Sigma Green Belt, SAFe Agilist, Scrum Master, and Epic Clinical Informaticist. These aren't just credentials—they're tools I use regularly to get things done right.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tools I Work With -->
-                <div class="curious-section-group">
-                    <h3 class="curious-section-title">Tools I Work With</h3>
-                    <div class="curious-grid">
-                        <div class="curious-card">
-                            <h4>Healthcare Systems</h4>
-                            <p>Epic, Cerner, Altera—the big electronic health records. Plus newer tools that help with clinical documentation, video visits, sharing patient information between organizations, and monitoring patients at home.</p>
-                        </div>
-                        <div class="curious-card">
-                            <h4>Building Software</h4>
-                            <p>When I see a problem worth solving, I build something to fix it. I use modern AI-assisted coding tools, version control, databases, and web hosting to create working applications—not just slide decks.</p>
-                        </div>
-                        <div class="curious-card">
-                            <h4>Why This Matters</h4>
-                            <p>I can sit in a room with clinicians and understand their frustrations. Then I can sit with engineers and explain what needs to happen. That's rare, and it's useful.</p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- My Story Section -->
-    <section id="my-story" class="my-story">
-        <div class="section-container">
-            <div class="story-content">
-                <p class="section-label">My Story</p>
-                <h2 class="section-title">The path here wasn't linear.</h2>
-
-                <p>I grew up in Santa Cruz, California—a beach kid who loved riding my bike around town so much I didn't get my driver's license until 18. (Why would I? My little beach town had everything I needed.)</p>
-
-                <p>Technology wasn't the plan. Education and leadership development were my focus. But after some life pivots, I found myself working in a hospital, pursued my Master's in Healthcare Administration, and got pulled into early EHR implementation work. <strong>Healthcare technology found me</strong>—and I've been here ever since.</p>
-
-                <p>These days, the creative spark that drew me to applied arts in high school has come full circle. I'm fascinated by how AI enables new kinds of problem-solving and creativity.</p>
-
-                <div class="story-images">
-                    <div class="story-image-placeholder"><img src="IMG_7348.jpg" alt="Marty Koepke"></div>
-                    <div class="story-image-placeholder"><img src="IMG_8961.jpg" alt="Marty Koepke"></div>
-                    <div class="story-image-placeholder"><img src="IMG_9899.jpg" alt="Marty Koepke"></div>
-                </div>
-
-                <p>When I'm not working, you'll find me in California's Gold Country—taking long walks, enjoying good coffee and artful dark chocolate, tending my garden, and yes, hanging out with my chickens. After years in bigger places, the small-town exhale feels like home. I guess it always stuck with me.</p>
-
-                <div class="story-highlight">
-                    <p><strong>Family is everything.</strong> Married 23 years, two grown sons (22 and 20), and a one-year-old grandbaby who makes it all worth it.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How I Work Section -->
-    <section id="process" class="process">
-        <div class="section-container">
-            <p class="section-label">How I Work</p>
-            <h2 class="section-title">From problem to pathway.</h2>
-            <p class="process-intro">Whether I'm building a product or guiding someone through their first app, I follow the same process:</p>
-            <div class="process-grid">
-                <div class="process-card">
-                    <div class="process-number">01</div>
-                    <h3>Listen</h3>
-                    <p>Deeply understand the real problem—not just symptoms. What's the desired outcome? What's getting in the way?</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">02</div>
-                    <h3>Architect</h3>
-                    <p>Map the people, process, and platform decisions. Build alignment with stakeholders. Chart a clear path forward.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">03</div>
-                    <h3>Build</h3>
-                    <p>Execute thoughtfully—whether that's process redesign, technology implementation, or AI-enabled solutions.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">04</div>
-                    <h3>Sustain</h3>
-                    <p>Make sure it actually sticks. Solutions that work for the humans using them, not just look good on paper.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Capabilities Section -->
-    <section id="capabilities" class="capabilities">
-        <div class="section-container">
-            <p class="section-label">What I Bring</p>
-            <h2 class="section-title">Practical expertise, delivered clearly.</h2>
-            <div class="capabilities-grid">
-                <div class="capability-card">
-                    <div class="capability-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 12h4l3-9 4 18 3-9h4"/>
-                            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3>Process Optimization</h3>
-                    <p>Identify inefficiencies, eliminate waste, and design workflows that stick—using proven methodologies like Lean Six Sigma, not guesswork.</p>
-                </div>
-                <div class="capability-card">
-                    <div class="capability-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3>AI-Enabled Solutions</h3>
-                    <p>Cut through the hype. I've led AI implementations from pilot to enterprise rollout—and know what actually moves the needle versus what just sounds impressive.</p>
-                </div>
-                <div class="capability-card">
-                    <div class="capability-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3>Change Leadership</h3>
-                    <p>Navigate complex stakeholder dynamics. Build buy-in from front-line staff to executives. Make change feel achievable.</p>
-                </div>
-                <div class="capability-card">
-                    <div class="capability-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                        </svg>
-                    </div>
-                    <h3>Performance Excellence</h3>
-                    <p>Establish meaningful metrics. Create visibility into what's working. Build cultures of continuous improvement.</p>
-                </div>
-                <div class="capability-card">
-                    <div class="capability-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <path d="M9 3v18"/>
-                            <path d="M15 3v18"/>
-                            <path d="M3 9h18"/>
-                            <path d="M3 15h18"/>
-                        </svg>
-                    </div>
-                    <h3>Technology Strategy</h3>
-                    <p>Evaluate platforms, plan implementations, and ensure technology decisions serve business outcomes—not the other way around.</p>
-                </div>
-                <div class="capability-card">
-                    <div class="capability-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
-                        </svg>
-                    </div>
-                    <h3>Teaching & Mentorship</h3>
-                    <p>I've learned that the best way to understand something is to teach it. I help others build real things — using AI as both the engine and the guide.</p>
+                <h2 class="section-title">Who's Behind This?</h2>
+                <p>I'm Marty. I've built and shipped 4 working applications — GovernIQ, Activiteez, Sophia, and VytalPath Academy — without being a professional developer.</p>
+                <p>I've also failed at the "build an app in an hour" promise enough times to know what actually matters: clarity before code, understanding over speed, and shipping over tinkering.</p>
+                <p>By day, I work in healthcare informatics helping large organizations solve complex problems. I wrote <em>Between the Clicks</em> for people entering that field. Now I help others build products of their own.</p>
+                <p>I live in California's Gold Country with my wife of 23 years, two grown sons, a one-year-old grandbaby, and a small flock of chickens.</p>
+                <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.08);"><strong>Practical Informatics</strong> is where all my work lives — whether I'm building an app for a client, coaching someone through their own build, or helping a team develop AI capability. If you need something built, taught, or both, <a href="#contact" style="color: var(--color-accent); font-weight: 600;">let's talk</a>.</p>
+                <div class="about-links" style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem;">
+                    <a href="https://www.linkedin.com/in/martykoepke/" target="_blank" rel="noopener" style="color: var(--color-accent); text-decoration: none; font-weight: 500;">LinkedIn</a>
+                    <a href="https://a.co/d/ivCKeGo" target="_blank" rel="noopener" style="color: var(--color-accent); text-decoration: none; font-weight: 500;">Between the Clicks</a>
                 </div>
             </div>
         </div>
@@ -2276,84 +2694,6 @@
                     <p style="margin-top: 1.5rem;">Finished the book and want to go deeper? <a href="ship-it.html" style="color: var(--color-accent); font-weight: 600;">Learn with me.</a></p>
                     <div class="book-cta">
                         <a href="https://a.co/d/ivCKeGo" target="_blank" rel="noopener" class="btn btn-primary">Get the Book on Amazon →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Learn With Me Section -->
-    <section id="learn" class="learn">
-        <div class="section-container">
-            <p class="section-label">Learn</p>
-            <h2 class="section-title">Build Something Real</h2>
-
-            <div class="learn-cards">
-                <div class="learn-card">
-                    <h3>1:1 Accelerator</h3>
-                    <p>8 private sessions over 8-10 weeks. Personalized project guidance. Async support between sessions. You'll finish with something real — built by you, with AI as your partner.</p>
-                    <div class="learn-price">$3,500</div>
-                    <a href="https://tally.so/r/xXVPgo" target="_blank" rel="noopener" class="btn btn-primary">Apply for the Accelerator →</a>
-                </div>
-                <div class="learn-card">
-                    <h3>Team Training</h3>
-                    <p>Custom engagements for healthcare organizations and teams wanting to build AI capability. Workshop formats, cohort programs, or hands-on builds — designed around your goals.</p>
-                    <div class="learn-price">Contact for pricing</div>
-                    <a href="#contact" class="btn btn-secondary">Let's Talk</a>
-                </div>
-            </div>
-
-            <div class="learn-intro">
-                <p>I didn't go to coding bootcamp. I didn't get a CS degree. I learned to build by building — with AI as my toolbox, my debugger, and my teacher.</p>
-                <p>Now I help others do the same.</p>
-                <p>This isn't a course about using AI. It's a hands-on program where you'll build a working application — your idea, your problem to solve — using the same tools and methods behind Activiteez, Sophia, and GovernIQ.</p>
-                <p>Here's the secret: I don't know everything. Nobody does. But I've learned how to use AI to fill the gaps — to ask the right questions, validate my assumptions, and debug problems I couldn't solve alone. I'll teach you to do that too.</p>
-
-                <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-top: 2rem; margin-bottom: 1rem;">What you'll learn</h4>
-                <ul class="learn-list">
-                    <li>How to scope an idea that's actually buildable</li>
-                    <li>Setting up your environment (Cursor, Claude, Supabase, Vercel, GitHub)</li>
-                    <li>Prompting strategies that get AI to build with you, not just for you</li>
-                    <li>Iterating when things break (they will)</li>
-                    <li>Shipping something real</li>
-                </ul>
-
-                <div class="learn-audience">
-                    <h4>Who this is for</h4>
-                    <p>Professionals who see AI changing their field and want to learn to build, not just watch from the sidelines. No coding experience required — just a problem you want to solve and the willingness to get your hands dirty.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Company Section -->
-    <section id="company" class="company">
-        <div class="section-container">
-            <p class="section-label">The Company</p>
-            <h2 class="section-title">Practical Informatics LLC</h2>
-            <div class="company-card" style="display: block; text-align: center; padding: 3rem;">
-                <p style="font-size: 1.15rem; color: var(--color-text-muted); line-height: 1.8; max-width: 700px; margin: 0 auto 2rem;">The work I do — building, teaching, consulting — lives under Practical Informatics, a company I started to take what I've learned and serve the world around me.</p>
-                <p style="font-size: 1.15rem; color: var(--color-text-muted); line-height: 1.8; max-width: 700px; margin: 0 auto 2rem;">If you're an organization looking for custom solutions, process design, or hands-on coaching for your team, let's talk.</p>
-                <a href="#contact" class="btn btn-primary">Let's Talk</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Speaking Section -->
-    <section id="speaking" class="speaking">
-        <div class="section-container">
-            <div class="speaking-card">
-                <div class="speaking-content">
-                    <p class="section-label">Speaking</p>
-                    <h3>Sharing what I've learned.</h3>
-                    <p>I speak about practical approaches to technology adoption, change leadership, and building organizations that actually improve — without the consultant-speak. Topics include: building with AI, navigating organizational change, and making technology work for the humans using it.</p>
-                    <a href="#contact" class="btn btn-primary">Invite Me to Speak</a>
-                </div>
-                <div class="speaking-details">
-                    <div class="speaking-event">
-                        <p class="event-label">Upcoming</p>
-                        <p class="event-title">Arizona ANIA December 2025 Education Series</p>
-                        <p class="event-org">American Nursing Informatics Association - Arizona Chapter</p>
                     </div>
                 </div>
             </div>
