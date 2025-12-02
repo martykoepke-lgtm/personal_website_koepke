@@ -3,7 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marty Koepke | Real Problems. Thoughtful Solutions.</title>
+    <title>Marty Koepke | Healthcare Informatics Consultant & Author</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Marty Koepke is a healthcare informatics consultant with 15+ years experience in EHR implementation, AI solutions, and organizational transformation. Author of 'Between the Clicks.'">
+    <meta name="keywords" content="healthcare informatics, EHR consultant, Epic implementation, healthcare technology, AI in healthcare, change management, Marty Koepke">
+    <meta name="author" content="Marty Koepke">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://martykoepke.com/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Marty Koepke | Healthcare Informatics Consultant & Author">
+    <meta property="og:description" content="Healthcare informatics consultant with 15+ years experience. Helping organizations move from stuck to solved through thoughtful technology solutions.">
+    <meta property="og:url" content="https://martykoepke.com/">
+    <meta property="og:site_name" content="Marty Koepke">
+    <meta property="og:image" content="https://martykoepke.com/marty-avatar.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marty Koepke | Healthcare Informatics Consultant">
+    <meta name="twitter:description" content="Healthcare informatics consultant helping organizations move from stuck to solved.">
+    <meta name="twitter:image" content="https://martykoepke.com/marty-avatar.png">
+
+    <!-- Structured Data for AI and Search Engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Marty Koepke",
+        "jobTitle": "Healthcare Informatics Consultant",
+        "description": "Healthcare informatics consultant with 15+ years experience in EHR implementation, AI solutions, process optimization, and organizational transformation.",
+        "url": "https://martykoepke.com",
+        "email": "marty.koepke@practicalinformatics.com",
+        "sameAs": [
+            "https://www.linkedin.com/in/marty-koepke/"
+        ],
+        "knowsAbout": [
+            "Healthcare Informatics",
+            "Electronic Health Records",
+            "Epic EHR",
+            "AI Implementation",
+            "Change Management",
+            "Process Optimization",
+            "Lean Six Sigma"
+        ],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Master's in Healthcare Administration"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Lean Six Sigma Green Belt"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "SAFe Agilist"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Epic Clinical Informaticist"
+            }
+        ],
+        "author": {
+            "@type": "Book",
+            "name": "Between the Clicks",
+            "alternateName": "The Hidden Work of Healthcare Informatics",
+            "url": "https://a.co/d/ivCKeGo"
+        }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
@@ -245,7 +316,7 @@
 
         /* Section Styles */
         section {
-            padding: 6rem 2rem;
+            padding: 4rem 2rem;
         }
 
         .section-container {
@@ -1314,27 +1385,29 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <a href="#" class="logo">Marty Koepke</a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#company">The Company</a></li>
-            <li><a href="#book">The Book</a></li>
-            <li><a href="#impact">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="#" class="logo">Marty Koepke</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#book">The Book</a></li>
+                <li><a href="#impact">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-inner">
             <div class="hero-grid">
                 <div class="hero-image">
-                    <img src="IMG_8527.jpg" alt="Marty Koepke" class="hero-photo">
+                    <img src="IMG_8527.jpg" alt="Marty Koepke - Healthcare Informatics Consultant" class="hero-photo">
                 </div>
                 <div class="hero-content">
                     <p class="hero-greeting">Hi, I'm Marty</p>
-                    <h1>I help organizations move from <span class="highlight">stuck</span> to <span class="highlight">solved.</span></h1>
+                    <h1 id="hero-heading">I help organizations move from <span class="highlight">stuck</span> to <span class="highlight">solved.</span></h1>
                     <p class="hero-subtitle">Real problems deserve thoughtful solutions that actually work. I meet people where they are and architect paths to meaningful, lasting change.</p>
                 </div>
             </div>
@@ -1342,7 +1415,7 @@
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Let's Talk</a>
                     <a href="#process" class="btn btn-secondary">How I Work</a>
-                    <a href="#company" class="btn btn-secondary">The Company</a>
+                    
                     <a href="#book" class="btn btn-secondary">The Book</a>
                 </div>
             </div>
@@ -1574,32 +1647,6 @@
         </div>
     </section>
 
-    <!-- Company Section -->
-    <section id="company" class="company">
-        <div class="section-container">
-            <p class="section-label">The Company</p>
-            <h2 class="section-title">Practical Informatics LLC</h2>
-            <div class="company-card">
-                <div class="company-content">
-                    <h3>A passion project, one year young.</h3>
-                    <p class="company-tagline">Taking what I know and serving the world around me.</p>
-                    <p>Practical Informatics started with a simple idea: use everything I've learned over 15+ years to help real people who struggle with real things.</p>
-                    <p>Whether you're trying to break into healthcare technology, looking to leverage AI to make your work life easier, or need a custom solution designed for a real-world pain point—I'm here to help.</p>
-                    <p>This isn't a big consulting firm with layers of overhead. It's me, bringing practical experience directly to the problems that matter to you.</p>
-                </div>
-                <div class="company-services-wrapper">
-                    <p style="font-weight: 600; margin-bottom: 1rem; color: var(--color-text);">How I can help:</p>
-                    <div class="company-services">
-                        <span class="company-service-tag">Career Guidance</span>
-                        <span class="company-service-tag">AI Implementation</span>
-                        <span class="company-service-tag">Custom Solutions</span>
-                        <span class="company-service-tag">Process Design</span>
-                        <span class="company-service-tag">Coaching</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Book Section -->
     <section id="book" class="book">
@@ -1739,9 +1786,10 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2025 Practical Informatics LLC. All rights reserved.</p>
     </footer>
 
