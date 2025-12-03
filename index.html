@@ -43,7 +43,7 @@
                 "knowsAbout": [
                     "Healthcare Informatics", "AI Ambient Listening Implementation", "EHR Optimization",
                     "Epic EHR", "Process Transformation", "Change Management", "Lean Six Sigma",
-                    "React Development", "TypeScript", "Healthcare Software Development"
+                    "React Development", "TypeScript", "Healthcare Software Development", "AI-Enabled Application Development"
                 ],
                 "hasCredential": [
                     {"@type": "EducationalOccupationalCredential", "name": "Master's in Healthcare Administration"},
@@ -62,6 +62,48 @@
                 "url": "https://a.co/d/fJo6U1q"
             },
             {
+                "@type": "SoftwareApplication",
+                "@id": "https://martykoepke.com/#governiq",
+                "name": "GovernIQ",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "description": "Enterprise EHR governance workflow system with AI-powered workload assessment, command palette navigation, conversational intake wizards, and automatic workflow triggers delivering 80% time savings in governance processes.",
+                "author": {"@id": "https://martykoepke.com/#person"},
+                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://martykoepke.com/#activiteez",
+                "name": "Activiteez",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "description": "Activity management platform for senior living facilities with multi-building support, 174 activity templates, three-tier consumption tracking, automatic inventory deduction, and event roster management.",
+                "author": {"@id": "https://martykoepke.com/#person"},
+                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://martykoepke.com/#sophia",
+                "name": "Sophia",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "url": "https://sophiav2.vercel.app/",
+                "description": "AI-powered EHR governance assistant with visual step-by-step process navigation and conversational AI that answers complex governance questions in plain language.",
+                "author": {"@id": "https://martykoepke.com/#person"},
+                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://martykoepke.com/#vytalpath",
+                "name": "VytalPath Academy",
+                "applicationCategory": "EducationalApplication",
+                "operatingSystem": "Web",
+                "url": "https://vytalpathdemo.vercel.app/",
+                "description": "AI-powered healthcare training platform for career changers with 1,000+ medical terms, intelligent terminology learning, step-by-step workflows, HIPAA modules, and smart search.",
+                "author": {"@id": "https://martykoepke.com/#person"},
+                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+            },
+            {
                 "@type": "FAQPage",
                 "mainEntity": [
                     {
@@ -78,6 +120,22 @@
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": "The CLEAR framework is Marty Koepke's consulting methodology: Clarify (understand the problem), Lock (commit to scope and metrics), Engineer (design the solution), Assure (validate through testing), and Release (go live with support)."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What applications has Marty Koepke built?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Marty Koepke has built four healthcare-focused applications: 1) GovernIQ - an AI-powered EHR governance workflow system with workload assessment and opportunity insights, 2) Activiteez - activity management for senior living facilities with multi-building support and inventory tracking, 3) Sophia - an AI governance assistant with conversational process navigation, and 4) VytalPath Academy - an AI-powered healthcare training platform with 1,000+ medical terms for career changers. All built using React, TypeScript, and Supabase."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does Marty Koepke use AI in development?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Marty Koepke leverages AI throughout the development process to move from concept to shipped code faster. Several of her applications also embed AI capabilities, including GovernIQ (AI-powered workload assessment and opportunity insights), Sophia (conversational AI for governance navigation), and VytalPath Academy (intelligent terminology learning). Her portfolio website itself was built using AI-augmented development."
                         }
                     }
                 ]
@@ -399,11 +457,30 @@
 
         /* Portfolio / Work Section */
         .portfolio { background: var(--color-bg-alt); }
+        .portfolio-header {
+            margin-bottom: 2rem;
+        }
         .portfolio-intro {
             font-size: 1rem;
             color: var(--color-text-muted);
             max-width: 700px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .ai-callout {
+            display: block;
+            margin: 0 0 1.5rem;
+        }
+        .ai-callout em {
+            display: inline-block;
+            background: linear-gradient(135deg, #E8F4F8 0%, #D4ECEF 100%);
+            border: 2px solid #5BBFCF;
+            border-radius: 25px;
+            padding: 0.6rem 1.5rem;
+            font-size: 0.95rem;
+            color: #1A8A9C;
+            font-style: italic;
+            font-weight: 500;
+            box-shadow: 0 3px 12px rgba(91, 191, 207, 0.2);
         }
         .product-grid {
             display: grid;
@@ -1100,9 +1177,12 @@
     <!-- Work / Portfolio Section -->
     <section id="work" class="portfolio">
         <div class="section-container">
-            <p class="section-label">What I've Built</p>
-            <h2 class="section-title">From concept to shipped product.</h2>
-            <p class="portfolio-intro">When I see a problem worth solving, I build something. Here's what that looks like.</p>
+            <div class="portfolio-header">
+                <p class="section-label">What I've Built</p>
+                <h2 class="section-title">From concept to shipped product.</h2>
+                <p class="portfolio-intro">When I see a problem worth solving, I build something—leveraging AI to move from concept to shipped code faster. Some of these tools embed AI capabilities too, turning complexity into conversation.</p>
+                <p class="ai-callout"><em>Including this site—100% custom coded, AI-leveraged, built by me for you.</em></p>
+            </div>
 
             <div class="product-grid">
                 <!-- GovernIQ -->
@@ -1115,10 +1195,10 @@
                         <p class="product-problem">EHR governance involves multiple committees, complex workflows, and dozens of stakeholders. Teams waste time navigating processes.</p>
                         <div class="product-solution">
                             <strong>Solution</strong>
-                            Work management with command palette navigation, conversational intake, automatic workflow triggers (80% time savings), and capacity calculations.
+                            Work management with command palette navigation, conversational intake, automatic workflow triggers (80% time savings), AI-powered workload assessment, and opportunity insights.
                         </div>
                         <div class="product-tech">
-                            <span>React 18</span><span>TypeScript</span><span>Supabase</span><span>Recharts</span>
+                            <span>React 18</span><span>TypeScript</span><span>Supabase</span><span>AI Insights</span>
                         </div>
                         <div class="product-cta">View All Screenshots →</div>
                     </div>
@@ -1172,10 +1252,10 @@
                         <p class="product-problem">New front office staff face overwhelming first days. Medical jargon, insurance workflows, HIPAA—all at once causes turnover.</p>
                         <div class="product-solution">
                             <strong>Solution</strong>
-                            Training platform with 1,000+ healthcare terms, step-by-step workflows, HIPAA modules, and smart search.
+                            AI-powered training platform with 1,000+ healthcare terms, intelligent terminology learning, step-by-step workflows, and smart search.
                         </div>
                         <div class="product-tech">
-                            <span>React + TypeScript</span><span>Supabase</span><span>Mobile-First</span>
+                            <span>React + TypeScript</span><span>Supabase</span><span>AI Learning</span>
                         </div>
                         <div class="product-cta">Try the Demo →</div>
                     </div>
